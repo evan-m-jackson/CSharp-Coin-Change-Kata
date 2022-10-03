@@ -9,13 +9,20 @@ public class CoinChanger
                 int amount_of_change = cent_amount(remaining_coins);
                 result += denomination(amount_of_change);
                 remaining_coins -= amount_of_change;
+                
+                if (remaining_coins > 0){
+                    result = comma_added(result);
+                }
         }
 
-        return result[0..^2];
+        return result;
     }
 
     private int cent_amount(int number) {
-        if (number >= 10){
+        if (number >= 25){
+            return 25;
+        }
+        else if (number >= 10){
             return 10;
         }
         else if (number >= 5) {
@@ -27,14 +34,21 @@ public class CoinChanger
     }
 
     private String denomination(int number) {
+        if (number == 25){
+            return "Quarter";
+        }
         if (number == 10){
-            return "Dime, ";
+            return "Dime";
         }
         else if (number == 5) {
-            return "Nickel, ";
+            return "Nickel";
         }
         else{
-            return "Penny, ";
+            return "Penny";
         }
+    }
+
+    private String comma_added(String str) {
+        return str += ", ";
     }
 }
