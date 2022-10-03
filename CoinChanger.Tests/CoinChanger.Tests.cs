@@ -2,14 +2,16 @@ namespace CoinChanger.Tests;
 public class CoinChangerTests
 {
     [Theory]
-    [InlineData(1, "1")]
-    [InlineData(2, "1, 1")]
-    [InlineData(3, "1, 1, 1")]
-    [InlineData(4, "1, 1, 1, 1")]
-    [InlineData(5, "5")]
-    [InlineData(6, "5, 1")]
-    [InlineData(7, "5, 1, 1")]
-    [InlineData(8, "5, 1, 1, 1")]
+    [InlineData(1, "Penny")]
+    [InlineData(2, "Penny, Penny")]
+    [InlineData(3, "Penny, Penny, Penny")]
+    [InlineData(4, "Penny, Penny, Penny, Penny")]
+    [InlineData(5, "Nickel")]
+    [InlineData(6, "Nickel, Penny")]
+    [InlineData(7, "Nickel, Penny, Penny")]
+    [InlineData(8, "Nickel, Penny, Penny, Penny")]
+    [InlineData(9, "Nickel, Penny, Penny, Penny, Penny")]
+    [InlineData(10, "Dime")]
     public void CoinChanger_Tests(int cents, String expected){
         var coinChanger = new CoinChanger();
 
