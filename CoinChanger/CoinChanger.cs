@@ -1,27 +1,21 @@
 ﻿namespace CoinChanger;
 public class CoinChanger
 {
-    public string change(int number)
-    {
+    public String change(int coin) {
+        int remaining_coins = coin;
         string result = "";
-        int remaining = number;
 
-        do
-        {
-            if (remaining >= 5)
-            {
+        while (remaining_coins > 0){
+            if (remaining_coins >= 5){
                 result += "5, ";
-                remaining -= 5;
-            }
-
-            else
-            {
+                remaining_coins -= 5;
+            } else {
                 result += "1, ";
-                remaining -= 1;
-            }
-
+                remaining_coins -= 1;
+            } 
             
-        } while (remaining > 0);
-        return result.Remove(result.Length - 2);
+        }
+
+        return result[0..^2];
     }
 }
