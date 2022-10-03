@@ -1,4 +1,4 @@
-#Coin Change Kata in C#
+#Coin Change Kata in C Sharp
 
 Welcome to the Coin Changer App!
 
